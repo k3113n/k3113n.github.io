@@ -10,29 +10,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body> 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <h1 class="title navbar-item">
-          Click
-        </h1>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
+    <section class="hero is-fullheight-with-navbar">
+      <div class="hero-head">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <h1 class="title navbar-item">
+              Click
+            </h1>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item" href="policy.html">
+                Private Policy
+              </a>
+              <a class="navbar-item" href="terms.html">
+                Terms & Conditions
+              </a>
+            </div>
+          </div>
+        </nav>
       </div>
-      <div class="navbar-menu">
-        <div class="navbar-end">
-          <a class="navbar-item" href="policy.html">
-            Private Policy
-          </a>
-          <a class="navbar-item" href="terms.html">
-            Terms & Conditions
-          </a>
-        </div>
-      </div>
-    </nav>
-    <div class="hero is-fullheight-with-navbar">
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 id='count' class="title is-size-1" style='font-family: "Noto Sans Mono", monospace;'>
@@ -47,13 +49,28 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
     <script>
       const socket = new WebSocket('wss://greater.nellek.com');
       socket.addEventListener('message', function (event) {
         console.log('Message from server:', event.data);   
         if(Number(event.data)) {
           document.getElementById('count').innerText = event.data;
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+         const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+         if ($navbarBurgers.length > 0) {
+           $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
         }
       });
     </script>
