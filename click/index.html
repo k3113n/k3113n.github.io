@@ -59,7 +59,7 @@
       </div>
     </section>
     <script>
-      const socket = new WebSocket('wss://greater.nellek.com');
+      const socket = new WebSocket('wss://relay.nellek.com');
       socket.addEventListener('message', function (event) {
         console.log('Message from server:', event.data);   
         if(Number(event.data)) {
