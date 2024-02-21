@@ -59,12 +59,12 @@
       </div>
     </section>
     <script>
+      const reader = new FileReader();  
       const socket = new WebSocket('wss://relay.nellek.com');
       socket.addEventListener('message', function (event) {
-        console.log('Message from server:', event.data);  
-        console.log('Convert to number:', JSON.parse(event.data));
-        if(Number(event.data)) {
-          document.getElementById('count').innerText = event.data;
+        let data = reader.readAsText(event.data)
+        if(Number(data)) {
+          document.getElementById('count').innerText = data;
         }
       });
     </script>
