@@ -62,7 +62,8 @@
       const reader = new FileReader();  
       const socket = new WebSocket('wss://relay.nellek.com');
       socket.addEventListener('message', function (event) {
-        let data = reader.readAsText(event.data)
+        let data = reader.readAsText(event.data);
+        console.log(data);
         if(Number(data)) {
           document.getElementById('count').innerText = data;
         }
