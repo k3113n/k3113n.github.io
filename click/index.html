@@ -60,14 +60,25 @@
       </div>
     </section>
     <script>
-      const socket = new WebSocket('wss://relay.nellek.com');
-      socket.addEventListener('message', function (event) {
-        event.data.text().then(function(text) {
-          if(Number(text)) {
-            document.getElementById('count').innerText = text;
-          }
+      function connect() {      
+        const socket = new WebSocket('wss://relay.nellek.com');
+        socket.addEventListener('message', function (event) {
+          event.data.text().then(function(text) { 
+            if(Number(text)) {
+              document.getElementById('count').innerText = text;
+            }
+          });
         });
-      });
+        socket.addEventListener('error', function(error){
+          socket.close();
+        });
+        socket.addEventListener('close', function(event) {
+          setTimeout(function() {
+            connect();
+          }, 3000); // 3 seconds delay before retrying
+        });
+      }
+      connect();
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
