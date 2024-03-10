@@ -1,0 +1,33 @@
+#page {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.ant{
+    position: absolute;
+    height: 3px;
+    width: 1px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23000000'%3E%3Ccircle cx='50' cy='40' r='15'/%3E%3Ccircle cx='50' cy='55' r='25'/%3E%3Ccircle cx='50' cy='80' r='20'/%3E%3Cpath d='M50,35 l5,-5 l5,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,35 l-5,-5 l-5,5' stroke='%23000000' stroke-width='3'/%3E%3Ccircle cx='50' cy='40' r='1' fill='%23ffffff'/%3E%3Ccircle cx='45' cy='45' r='1' fill='%23ffffff'/%3E%3Ccircle cx='55' cy='45' r='1' fill='%23ffffff'/%3E%3Cpath d='M50,60 l-5,0 l0,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,60 l5,0 l0,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,60 l-2.5,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,60 l2.5,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,80 l-3,0 l0,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,80 l3,0 l0,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,80 l-1.5,5' stroke='%23000000' stroke-width='3'/%3E%3Cpath d='M50,80 l1.5,5' stroke='%23000000' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.head, .thorax, .abdomen {
+    border-radius: 50%;
+    background-color: transparent;
+    height: 1px;
+    width: 1px;
+}
+
+
+.overlay {
+    position: absolute;
+    cursor: pointer;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
