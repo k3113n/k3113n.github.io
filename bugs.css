@@ -7,8 +7,8 @@
 
 .ant{
     position: absolute;
-    height: 0.15em;
-    width: 0.05em;
+    height: 1vh;
+    width: 0.3vh;
 }
 
 .head, .thorax, .abdomen {
