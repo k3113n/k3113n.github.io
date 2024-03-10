@@ -7,15 +7,15 @@
 
 .ant{
     position: absolute;
-    height: 2%;
-    width: 2%;
+    height: 0.15em;
+    width: 0.05em;
 }
 
 .head, .thorax, .abdomen {
     border-radius: 50%;
     background-color: black;
-    height: 10%;
-    width: 5%;
+    height: 33%;
+    width: 100%;
 }
 
 .overlay {
